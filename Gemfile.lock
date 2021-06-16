@@ -1,6 +1,9 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     childprocess (3.0.0)
+    nokogiri (1.11.7-x64-mingw32)
+      racc (~> 1.4)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
     racc (1.5.2)
@@ -14,10 +17,11 @@ GEM
       selenium-webdriver (>= 3.0, < 4.0)
 
 PLATFORMS
+  x64-mingw32
   x86_64-linux
 
 DEPENDENCIES
   webdrivers (~> 4.0)
 
 BUNDLED WITH
-   2.2.7
+   2.2.17
