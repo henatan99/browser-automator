@@ -19,7 +19,9 @@ browser.link(:text =>"Review Requests 2.0").click
 loop do
     begin
       sleep(1)
-      puts browser.span(class:'review-request-announcement-header').text 
+      target_text = browser.span(class:'review-request-announcement-header').text 
+      browser.button(:text => "Claim").click if browser.button(:text => "Claim")
+      puts target_text 
     rescue
       puts "Nothing"
     end
