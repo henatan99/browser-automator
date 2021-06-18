@@ -24,14 +24,17 @@ def browser_auto
   counter = 0
   loop do
       begin
-        sleep(0.2)
+        # sleep(0.2)
         target_text = browser.span(class:'review-request-announcement-header').text 
-        browser.button(:text => 'Claim').click if target_text != 'No Available Reviews'
+        if target_text != 'No Available Reviews' 
+          browser.button(:text => 'Claim').exists? ? browser.button(:text => 'Claim').click : browser.link(:text => 'Claim').click 
+          sleep(3)
+        end
         puts target_text 
       rescue
         puts "Nothing"
       end
-      if (counter >= 50) 
+      if (counter >= 15) 
         browser.refresh 
         counter = 0
       else 
